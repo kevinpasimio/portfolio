@@ -1,0 +1,249 @@
+<!--
+  Kevin Edward Pasimio - Portfolio (Single-file HTML)
+  Instructions:
+   1) Replace placeholder images in /assets or change the <img> src to your own images.
+   2) Edit text content (projects, links, contact) below.
+   3) To deploy quickly:
+      - GitHub Pages: create a repo, add this file as index.html on the main branch, then enable Pages.
+      - Netlify/Vercel: drag the project folder or connect your repo; both detect a static site.
+   4) For custom domain, follow your host's docs (Netlify/GitHub Pages).
+
+  This file is intentionally self-contained (no external CSS frameworks) so you can
+  edit and deploy easily. Enjoy!
+-->
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Kevin Edward Pasimio — Software Engineer</title>
+  <meta name="description" content="Portfolio of Kevin Edward Pasimio — aCross-platform dev (Flutter, Angular, Ionic, Laravel)." />
+  <style>
+    :root{
+      --bg:#0f1724; --card:#0b1220; --muted:#9aa4b2; --accent:#4f46e5;
+      --glass: rgba(255,255,255,0.04);
+      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%; margin:0; background:linear-gradient(180deg,#071021 0%,var(--bg) 100%); color:#e6eef6}
+    a{color:var(--accent); text-decoration:none}
+    header{display:flex; align-items:center; justify-content:space-between; padding:22px 28px; backdrop-filter: blur(6px)}
+    .brand{display:flex; gap:14px; align-items:center}
+    .avatar{width:60px;height:60px;border-radius:10px;background:linear-gradient(135deg,#2dd4bf,#60a5fa);display:flex;align-items:center;justify-content:center;font-weight:700}
+    nav a{margin-left:18px; color:var(--muted)}
+    .container{max-width:1100px;margin:28px auto;padding:20px}
+    .hero{display:flex;gap:28px;align-items:center}
+    .hero-left{flex:1}
+    h1{margin:0;font-size:32px}
+    h2{margin:6px 0 18px;color:var(--muted); font-weight:600}
+    .cta{margin-top:18px}
+    .btn{display:inline-block;padding:10px 16px;border-radius:10px;background:linear-gradient(90deg,var(--accent),#06b6d4);color:white;font-weight:600}
+
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); border-radius:12px; padding:18px; box-shadow: 0 6px 20px rgba(2,6,23,0.6);}
+    .skills{display:flex;flex-wrap:wrap;gap:10px}
+    .chip{background:var(--glass); padding:8px 12px;border-radius:999px;color:var(--muted); font-weight:600}
+
+    .projects{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:18px;margin-top:18px}
+    .project-item img{width:100%;height:180px;object-fit:cover;border-radius:8px}
+    .meta{color:var(--muted); font-size:14px}
+
+    footer{margin-top:40px;padding:18px;text-align:center;color:var(--muted)}
+
+    /* responsive */
+    @media (max-width:880px){
+      .hero{flex-direction:column;align-items:flex-start}
+      header{padding:14px}
+      .avatar{width:48px;height:48px}
+    }
+
+    /* small utilities */
+    .gap{height:18px}
+    .pill{display:inline-block;padding:6px 10px;background:rgba(255,255,255,0.025);border-radius:999px}
+
+    /* Project modal */
+    .modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(1,2,6,0.6)}
+    .modal.open{display:flex}
+    .modal .box{width:90%;max-width:880px;background:#071427;padding:18px;border-radius:10px}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <div class="avatar">KE</div>
+      <div>
+        <div style="font-weight:700">Kevin Edward Pasimio</div>
+        <div style="font-size:13px;color:var(--muted)">Cross‑Platform Software Engineer</div>
+      </div>
+    </div>
+    <nav>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="hero-left">
+        <h1>Hi — I build mobile & web apps with Flutter, Angular, and Ionic.</h1>
+        <h2>Software Engineer at TRUDI Solutions Inc. — Flutter specialist focused on polished UX and reliable code.</h2>
+        <p style="color:var(--muted);max-width:70%">I design and ship production-ready cross-platform apps. I’ve worked as an outsourced Flutter Developer for Traxion Tech Inc., building features for payments, wallets, and logistics apps.</p>
+        <div class="cta">
+          <a class="btn" href="#projects">See Projects</a>
+          <a style="margin-left:12px;color:var(--muted)" href="#contact">Contact</a>
+        </div>
+      </div>
+      <div class="card" style="width:320px">
+        <div style="display:flex;align-items:center;justify-content:space-between">
+          <div>
+            <div style="font-size:13px;color:var(--muted)">Location</div>
+            <div style="font-weight:700">Legazpi City, Albay</div>
+          </div>
+          <div style="text-align:right">
+            <div style="font-size:13px;color:var(--muted)">Experience</div>
+            <div style="font-weight:700">5+ years</div>
+          </div>
+        </div>
+        <div class="gap"></div>
+        <div>
+          <div style="font-size:13px;color:var(--muted)">Top Skills</div>
+          <div class="skills" style="margin-top:8px">
+            <div class="chip">Flutter</div>
+            <div class="chip">Angular</div>
+            <div class="chip">Ionic</div>
+            <div class="chip">Laravel</div>
+            <div class="chip">Firebase</div>
+            <div class="chip">REST APIs</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" style="margin-top:28px">
+      <h2>Selected Projects</h2>
+      <p class="meta">Click a project to view details — replace images and links with your own.</p>
+
+      <div class="projects">
+        <article class="project-item card" tabindex="0" onclick="openProject('logistics')">
+          <img src="https://images.unsplash.com/photo-1509395176047-4a66953fd231?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=3adf2b3b6f3f9a8d2a7f6cad3cf1d2e8" alt="Logistics App">
+          <h3>Logistics Mobile App</h3>
+          <p class="meta">Ionic + Angular • Real-time tracking and notifications</p>
+        </article>
+
+        <article class="project-item card" tabindex="0" onclick="openProject('wallet')">
+          <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=1c8f6f8a2e3d9e3c2b8f4b2c9a1d4d5e" alt="Wallet App">
+          <h3>Multi-Feature Wallet (Flutter)</h3>
+          <p class="meta">Flutter • Payments, Bill Pay, Transaction History</p>
+        </article>
+
+        <article class="project-item card" tabindex="0" onclick="openProject('admin')">
+          <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=8b7f7b6f6a7f6b6c6d6e6f6a6b6c6d6e" alt="Admin Panel">
+          <h3>Admin Dashboard</h3>
+          <p class="meta">Angular • Admin tools, reports, and analytics</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="experience" style="margin-top:30px">
+      <h2>Experience</h2>
+      <div style="display:grid;grid-template-columns:1fr;gap:12px;margin-top:12px">
+        <div class="card">
+          <h3>Software Engineer — TRUDI Solutions Inc.</h3>
+          <p class="meta"><strong>September 2024 – Present</strong></p>
+          <ul>
+            <li>Develop Flutter features for Traxion Tech Inc., improving app performance and UX.</li>
+            <li>Integrated REST APIs and payment flows; ensured secure handling of transactions.</li>
+            <li>Worked in cross-functional agile teams to ship releases on cadence.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Outsourced Flutter Developer — Traxion Tech Inc. (contract)</h3>
+          <p class="meta"><strong>2023 – 2024</strong></p>
+          <ul>
+            <li>Implemented wallet features, transaction history, and UI improvements.</li>
+            <li>Collaborated with backend teams to stabilize API contracts and fix edge cases.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" style="margin-top:30px">
+      <h2>Contact</h2>
+      <div class="card" style="display:flex;gap:18px;align-items:center;flex-wrap:wrap;">
+        <div style="flex:1;min-width:220px">
+          <p style="margin:0">Email</p>
+          <p style="font-weight:700;margin:6px 0">kevin@example.com</p>
+
+          <p style="margin:0">LinkedIn</p>
+          <p style="margin:6px 0"><a href="#">linkedin.com/in/yourprofile</a></p>
+
+          <p style="margin:0">GitHub</p>
+          <p style="margin:6px 0"><a href="#">github.com/yourusername</a></p>
+        </div>
+
+        <div style="min-width:220px">
+          <p style="margin:0">Quick message</p>
+          <form onsubmit="sendMessage(event)">
+            <input id="name" placeholder="Your name" style="width:100%;padding:10px;border-radius:8px;border:0;margin-bottom:8px;background:rgba(255,255,255,0.02);color:inherit">
+            <input id="email" placeholder="Your email" style="width:100%;padding:10px;border-radius:8px;border:0;margin-bottom:8px;background:rgba(255,255,255,0.02);color:inherit">
+            <textarea id="message" placeholder="Message" style="width:100%;padding:10px;border-radius:8px;border:0;background:rgba(255,255,255,0.02);color:inherit"></textarea>
+            <div style="margin-top:8px"><button class="btn" type="submit">Send</button></div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      Built with ❤️ • Available for remote/contract work • Last updated: Aug 12, 2025
+    </footer>
+  </main>
+
+  <!-- Project modal template -->
+  <div id="modal" class="modal" role="dialog" aria-modal="true" onclick="closeModal(event)">
+    <div class="box" role="document">
+      <div id="modal-content"></div>
+      <div style="text-align:right;margin-top:12px"><button onclick="closeModal(event)" class="pill">Close</button></div>
+    </div>
+  </div>
+
+  <script>
+    const projects = {
+      logistics: {
+        title: 'Logistics Mobile App',
+        body: '<p>Built with Ionic + Angular. Features: real-time package tracking, driver assignment, push notifications, and proof-of-delivery capture.</p><p class="meta">My role: frontend development, maps integration, and push notification flow.</p>'
+      },
+      wallet: {
+        title: 'Multi-Feature Wallet (Flutter)',
+        body: '<p>Flutter app with payments, billers integration, transaction history, and secure PIN flows.</p><p class="meta">My role: feature implementation, state management, and performance tuning.</p>'
+      },
+      admin: {
+        title: 'Admin Dashboard',
+        body: '<p>Angular admin panel with reports, user management, and analytics charts.</p><p class="meta">My role: UI components, API integration, and access control.</p>'
+      }
+    }
+
+    function openProject(id){
+      const p = projects[id];
+      const modal = document.getElementById('modal');
+      document.getElementById('modal-content').innerHTML = '<h3>'+p.title+'</h3>'+p.body;
+      modal.classList.add('open');
+    }
+    function closeModal(e){
+      if(e.target.id === 'modal' || e.target.innerText === 'Close'){
+        document.getElementById('modal').classList.remove('open');
+      }
+    }
+
+    function sendMessage(e){
+      e.preventDefault();
+      const n = document.getElementById('name').value || 'Anonymous';
+      alert('Thanks '+n+" — this form is a demo. Replace with your email endpoint or Formspree/Netlify forms to receive messages.");
+      document.getElementById('name').value = '';
+      document.getElementById('email').value = '';
+      document.getElementById('message').value = '';
+    }
+  </script>
+</body>
+</html>
